@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block data%}
+<link rel="stylesheet" href="{% static '/css/admin.css'%}">
+  <!-- Main Wrapper -->
+  <div class="p-1 my-container active-cont">
+    <!-- Top Nav -->
+    <h3 class="text-dark p-3">ISSUES TABLE
+    </h3>
+    <!--========================table========================*/-->
+    <table id="dataTable">
+        <thead>
+          <tr>
+            <th>Sno</th>
+            <th>Pump not Working</th>
+            <th>Water quality Issue</th>
+            <th>Pipe Damage Issue</th>
+            <th>Water Flow Issues</th>
+            <th>Irregular water supply</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in objs %}
+          <tr>
+            <td>{{i.id}}</td>
+
+            {% if i.option1 == 1 %}
+            <td>Yes</td>
+            {% else %}
+            <td>No</td>
+            {% endif %}
+
+            {% if i.option2 == 1 %}
+            <td>Yes</td>
+            {% else %}
+            <td>No</td>
+            {% endif %}
+
+            {% if i.option3 == 1 %}
+            <td>Yes</td>
+            {% else %}
+            <td>No</td>
+            {% endif %}
+
+            {% if i.option4 == 1 %}
+            <td>Yes</td>
+            {% else %}
+            <td>No</td>
+            {% endif %}
+            
+            {% if i.option5 == 1 %}
+            <td>Yes</td>
+            {% else %}
+            <td>No</td>
+            {% endif %}
+            <td>{{i.date}}</td>
+            <td><a href="#">Resolved</a></td>
+            <td><a href="#">Delete</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    
+  </div>
+
+  <!-- bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+
+{% comment %} <script src="{% static '/js/admin.js'%}"></script> {% endcomment %}
+
+{% endblock %}

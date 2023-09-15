@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block data %}
+  <!-- Main Wrapper -->
+     <h2 style = "padding-left: 90px;">Pump Operations</h2>
+     <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Pump Operator</th>
+                    <th>Phone Number</th>
+                    <th>Village</th>
+                    <th>Pumped Today</th>
+                </tr>
+            </thead>
+        <tbody>
+            <!-- Add rows and data here -->
+            {% for i in pumpOperator %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.phone}}</td>
+                <td>{{i.village}}</td>
+                <td>{{i.status}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  </div>
+  <h2 style = "padding-left: 90px;">Water Quality Checks</h2>
+     <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Water Quality Operator</th>
+                    <th>Phone Number</th>
+                    <th>Village</th>
+                    <th>Portable/Not Portable</th>
+                </tr>
+            </thead>
+        <tbody>
+            <!-- Add rows and data here -->
+            {% for i in wqc %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.phone}}</td>
+                <td>{{i.village}}</td>
+                <td>{{i.status}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  </div>
+<script src="{% static '/js/pump-motor-task.js'%}"></script>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pump-motor-task-card</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="{% static '/css/pump-motor-task.css'%}">
+    <style>
+        ul li::before{
+        content: '';
+        position: absolute;
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        background-image: url("{% static '/assets/unchecked.png'%}");
+        background-size: cover;
+        background-position: center;
+        /* translate: -50px; */
+        top: 12px;
+        left: 8px;
+    }
+
+    .checked{
+        color: #555;
+        text-decoration: line-through;
+    }
+
+    .checked::before{
+        background-image: url("{% static '/assets/checked.png'%}");
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <form method = "POST" action="" >
+                {% csrf_token %}
+            <h2>Pump operator daily tasks <img src="" alt=""></h2>
+            <!-- <div class="row">
+                <input type="text" id="input-box" placeholder="">
+            </div> -->
+            <div display="none" id="currentDate" name="date" readonly>
+            </div>
+            <ul id="list-container">
+                <li >pump turned on</li>
+                <!-- <li >evening pump on</li>
+                <li >chlorinated water</li> -->
+            </ul>
+            <button type="submit" class="btn btn-primary"> Submit </button>
+        </form>
+        </div>
+    </div>
+    <script src="{% static '/js/pump-motor-task.js'%}"></script>
+
+    <!-- <input type="text" id="currentDate" readonly> -->
+    
+    <script>
+        // Function to get the current date in YYYY-MM-DD format
+        function getCurrentDate() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+
+        // Fetch current date and update the input tag's value
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentDateInput = document.getElementById('currentDate');
+            const currentDate = getCurrentDate();
+            currentDateInput.innerHTML = currentDate;
+            var dateinput = document.createElement("input");
+            dateinput.name = "dateinput";
+            dateinput.id = "dateinput";
+            dateinput.type = "hidden";
+            dateinput.value = currentDate;
+
+        });
+    </script>
+</body>
+</html>

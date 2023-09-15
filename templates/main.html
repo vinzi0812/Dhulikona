@@ -1,0 +1,371 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dhulikona-NGO</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/accdbacf21.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="animate.css"> -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css" />
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css"
+    />
+
+    <link rel="stylesheet" href="{% static '/css/main.css'%}" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script nonce="deee920c-5f07-42f2-a6ce-c6459d91067c">
+      (function (w, d) {
+        !(function (bg, bh, bi, bj) {
+          bg[bi] = bg[bi] || {};
+          bg[bi].executed = [];
+          bg.zaraz = { deferred: [], listeners: [] };
+          bg.zaraz.q = [];
+          bg.zaraz._f = function (bk) {
+            return function () {
+              var bl = Array.prototype.slice.call(arguments);
+              bg.zaraz.q.push({ m: bk, a: bl });
+            };
+          };
+          for (const bm of ["track", "set", "debug"])
+            bg.zaraz[bm] = bg.zaraz._f(bm);
+          bg.zaraz.init = () => {
+            var bn = bh.getElementsByTagName(bj)[0],
+              bo = bh.createElement(bj),
+              bp = bh.getElementsByTagName("title")[0];
+            bp && (bg[bi].t = bh.getElementsByTagName("title")[0].text);
+            bg[bi].x = Math.random();
+            bg[bi].w = bg.screen.width;
+            bg[bi].h = bg.screen.height;
+            bg[bi].j = bg.innerHeight;
+            bg[bi].e = bg.innerWidth;
+            bg[bi].l = bg.location.href;
+            bg[bi].r = bh.referrer;
+            bg[bi].k = bg.screen.colorDepth;
+            bg[bi].n = bh.characterSet;
+            bg[bi].o = new Date().getTimezoneOffset();
+            if (bg.dataLayer)
+              for (const bt of Object.entries(
+                Object.entries(dataLayer).reduce(
+                  (bu, bv) => ({ ...bu[1], ...bv[1] }),
+                  {}
+                )
+              ))
+                zaraz.set(bt[0], bt[1], { scope: "page" });
+            bg[bi].q = [];
+            for (; bg.zaraz.q.length; ) {
+              const bw = bg.zaraz.q.shift();
+              bg[bi].q.push(bw);
+            }
+            bo.defer = !0;
+            for (const bx of [localStorage, sessionStorage])
+              Object.keys(bx || {})
+                .filter((bz) => bz.startsWith("_zaraz_"))
+                .forEach((by) => {
+                  try {
+                    bg[bi]["z_" + by.slice(7)] = JSON.parse(bx.getItem(by));
+                  } catch {
+                    bg[bi]["z_" + by.slice(7)] = bx.getItem(by);
+                  }
+                });
+            bo.referrerPolicy = "origin";
+            bo.src =
+              "/cdn-cgi/zaraz/s.js?z=" +
+              btoa(encodeURIComponent(JSON.stringify(bg[bi])));
+            bn.parentNode.insertBefore(bo, bn);
+          };
+          ["complete", "interactive"].includes(bh.readyState)
+            ? zaraz.init()
+            : bg.addEventListener("DOMContentLoaded", zaraz.init);
+        })(w, d, "zarazData", "script");
+      })(window, document);
+    </script>
+  </head>
+  <body>
+    <header role="banner">
+      <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="main.html">Dhulikona</a>
+          <img src="">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarsExample05"
+            aria-controls="navbarsExample05"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarsExample05">
+            <ul class="navbar-nav pl-md-5 ml-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about-aagaya">About</a>
+              </li>
+              <!-- <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="services.html"
+                  id="dropdown04"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Services</a
+                >
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="#">Branding</a>
+                  <a class="dropdown-item" href="#">Web Design</a>
+                  <a class="dropdown-item" href="#">App Design</a>
+                  <a class="dropdown-item" href="#">Start Up</a>
+                </div>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'raiseIssue' %}">Raise an Issue</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'issuePage' %}">Admin</a>
+              </li>
+            </ul>
+            <div class="navbar-nav ml-auto">
+              <form method="post" class="search-form">
+                <span class="icon ion ion-search"></span>
+                <!-- <input type="text" class="form-control" placeholder="Search..."> -->
+                <p>
+                  {% if user.is_authenticated %}
+                  <a href="{% url 'logout' %}" id="login-btn" class="btn btn-outline-black"
+                    >Logout</a  >
+                  {% else %}
+                  <a href="{% url 'login' %}" id="login-btn" class="btn btn-outline-black"
+                    >Login / SignUp</a
+                  >
+                  {% endif %}
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div
+      class="slider-item overlay"
+      data-stellar-background-ratio="0.5"
+      style="
+        background-image: url('https://media.istockphoto.com/id/490400030/photo/climate-change-symbol-handful-of-water-scarsity-for-africa-symbol.jpg?s=612x612&w=0&k=20&c=aOPdXKpQz9it0VIWvM_RCegJVg8ZCEBN6lKkwyz5FEY=');
+      "
+    >
+      <!-- <p>helo jee</p> -->
+      <div class="container">
+        <div class="row slider-text align-items-center justify-content-center">
+          <div class="col-lg-9 text-center col-sm-12 element-animate">
+            <h1 id="neeche-chla-gaya" class="mb-4">We Are Creative Agency</h1>
+            <div class="btn-play-wrap mx-auto">
+              <p class="mb-4">
+                <a
+                  href="https://www.youtube.com/watch?v=_VnYSoMI-9Q"
+                  data-fancybox
+                  data-ratio="2"
+                  class="btn-play"
+                  ><span class="ion ion-ios-play"></span
+                ></a>
+              </p>
+            </div>
+            <span>Watch Video</span>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="u-container">
+
+</div> -->
+    </div>
+    <div id="about-aagaya" class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 mr-auto mb-5">
+            <span class="d-block text-uppercase text-secondary"
+              >Who We Are</span
+            >
+            <span class="divider my-4"></span>
+            <h2 class="mb-4 section-title">
+              We Are <strong>Design Agency</strong> That Bring Your Ideas Alive
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem
+              temporibus blanditiis accusamus perferendis libero accusantium
+              nisi itaque tempore, harum aliquid aut, sapiente dolor tenetur.
+              Tempora corrupti suscipit delectus perspiciatis!
+            </p>
+            <p class="mb-5">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
+              voluptatibus.
+            </p>
+            <p><a href="#" class="btn btn-outline-black">Learn More</a></p>
+          </div>
+          <div class="col-lg-6">
+            <figure class="img-dotted-bg">
+              <img src="https://uxdt.nic.in/wp-content/uploads/2021/01/jal-jeevan-mission-jjm-mainimg-jaljeevanmission-logo.jpg?x35530" alt="Image" class="img-fluid" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section portfolio-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="mb-4 section-title">Latest Work</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <a href="portfolio-single.html" class="work-thumb">
+              <div class="work-text">
+                <h2>Pipeline Repair</h2>
+                <p>Maintainence</p>
+              </div>
+              <img src="https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/10/featured-image-water-line.jpeg.jpg" alt="Image" class="img-fluid" />
+            </a>
+            <a href="portfolio-single.html" class="work-thumb">
+              <div class="work-text">
+                <h2>happy villagers</h2>
+                <p></p>
+              </div>
+              <img src="https://biharpost.in/wp-content/uploads/2015/01/happywomen-1024x630.jpg" alt="Image" class="img-fluid" />
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <a href="portfolio-single.html" class="work-thumb">
+              <div class="work-text">
+                <h2>Water Quality Check</h2>
+                <p>clean water supply</p>
+              </div>
+              <img src="https://ade.group/wp-content/uploads/2021/04/Water-Sampling-scaled.jpg" alt="Image" class="img-fluid" />
+            </a>
+            <a href="portfolio-single.html" class="work-thumb">
+              <div class="work-text">
+                <h2>Women volunteers</h2>
+                <p>self-sustainable</p>
+              </div>
+              <img src="https://ivhq.imgix.net/images/projects/india-kerala/volunteer-abroad-in-india-ivhq-kerala-womens-empowerment.jpg?auto=format,compress" alt="Image" class="img-fluid" />
+            </a>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12 text-center">
+            <p>
+              <a href="portfolio.html" class="btn btn-outline-white px-4 py-3"
+                >More Portfolio</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- <script src="{% static '/js/home.js' %}"> </script> -->
+
+      
+
+    <div id="contact-karo" class="bg-primary py-5">
+      <div class="container text-center">
+      <div class="row justify-content-center">
+      <div class="col-lg-7">
+      <h3 class="text-white mb-4 font-weight-normal">Do You Want To Contact Us?</h3>
+      <p class="text-white mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dolorem voluptas
+      soluta quo, odio
+      quaerat.</p>
+      <p class="mb-0"><a href="contact.html" class="btn btn-outline-white px-4 py-3">Get In Touch!</a></p>
+      </div>
+      </div>
+      </div>
+      </div>
+      <footer class="site-footer" role="contentinfo">
+      <div class="container">
+      <div class="row mb-5">
+      <div class="col-md-4 mb-5">
+      <h3 class="mb-4">About Craft</h3>
+      <p class="mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias nihil numquam aspernatur
+      inventore sint eligendi nostrum!</p>
+      <!-- <ul class="list-unstyled footer-link d-flex footer-social">
+      <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+      <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+      <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
+      <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+      </ul> -->
+      <div class="social-media-icons">
+        <i class="fa-brands fa-facebook fa-lg" style="color: white"></i>
+        <i class="fa-brands fa-instagram  fa-lg"  style="color: white"></i>
+        <i class="fa-brands fa-twitter  fa-lg"  style="color: white"></i>
+        <i class="fa-brands fa-discord  fa-lg"  style="color: white"></i>
+      </div>
+      </div>
+      <div class="col-md-5 mb-5 pl-md-5">
+      <div class="mb-5">
+      <h3 class="mb-4">Contact Info</h3>
+      <ul class="list-unstyled footer-link">
+      <li class="d-block">
+      <span class="d-block">Address:</span>
+      <span class="text-white">34 Street Name, City Name Here, United States</span>
+      </li>
+      <li class="d-block">
+      <span class="d-block">Telephone:</span><span class="text-white">+1 242 4942 290</span>
+      </li>
+      <li class="d-block">
+      <span class="d-block">Email:</span><span class="text-white"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="98f1f6fef7d8e1f7edeafcf7f5f9f1f6b6fbf7f5">[email&#160;protected]</a></span>
+      </li>
+      </ul>
+      </div>
+      </div>
+      <div class="col-md-3 mb-5">
+      <h3 class="mb-4">Quick Links</h3>
+      <ul class="list-unstyled footer-link">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Terms of Use</a></li>
+      <li><a href="#">Disclaimers</a></li>
+      <li><a href="#">Contact</a></li>
+      </ul>
+      </div>
+      <div class="col-md-3">
+      </div>
+      </div>
+      <div class="row">
+      <div class="col-12 text-md-center text-left">
+      <p>
+      
+      Copyright &copy;
+      <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></><script>document.write(new Date().getFullYear());</script> All Rights Reserved | This template is made with ❤️ by team-32
+      <!-- <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
+      
+      </p>
+      </div>
+      </div>
+    </div>
+      </footer>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jal Jeevan Mission Monitoring</title>
+  <style>
+    :root {
+      --primary: #eadecc;
+      --secondary: #471028;
+      --success: #3c283b;
+      --danger: #2f1928;
+    }
+    
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--primary);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 20px; /* Increase the border radius for a more rounded appearance */
+      border: 2px solid var(--secondary); /* Add border */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: var(--secondary);
+      text-align: center;
+      padding: 20px;
+      font-size: 28px;
+      font-family: cursive;
+    }
+
+    .complaint-form {
+      text-align: left;
+    }
+
+    .complaint-form label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .complaint-form input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    .complaint-form textarea {
+      width: 100%;
+      height: 100px;
+      resize: vertical;
+      margin-bottom: 10px;
+    }
+
+    .complaint-form button {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 20px;
+      background-color: var(--success);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .complaint-form button:hover {
+      background-color: var(--danger);
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+  <script>
+    function showPopup() {
+      var popup = document.getElementById("popup");
+      popup.style.display = "block";
+      setTimeout(function() {
+        popup.style.display = "none";
+      }, 2000);
+      var form = document.getElementByClass(complaint-form)
+      form.submit(); // Hide the popup after 2 seconds
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>Communication and Issue Reporting</h2>
+    
+    <form method='POST' action="" id="complaint-form" class="complaint-form" onsubmit="showPopup(); return false;">
+    {% csrf_token %}
+      <label>
+        <input type="checkbox" name="option1" value="Pump not Working">
+        Pump not working
+      </label>
+      <label>
+        <input type="checkbox" name="option2" value="Water quality Issue">
+        Water quality issue
+      </label>
+      <label>
+        <input type="checkbox" name="option3" value="Pipe Damage Issue">
+        Pipe Damage Issue
+      </label>
+      <label>
+        <input type="checkbox" name="option4" value="Water Flow Issues">
+        Water Flow Issues
+      </label>
+      <label>
+        <input type="checkbox" name="option5" value="Irregular water supply">
+        Irregular water supply
+      </label>
+      <label>
+        <input type="checkbox" name="issue" value="Other">Other
+      </label>
+      <br>
+      <br>
+      <textarea name="description" placeholder="Describe the issue..."></textarea><br>
+      <input type="hidden" name="date" id="complaintDate">
+      <button type="submit">Submit Complaint</button>
+    </form>
+
+    <div id="popup" class="popup">
+      <p>Complaint submitted successfully!</p>
+    </div>
+  </div>
+</body>
+<script>
+  var date = new Date();
+  document.getElementById("complaintDate").value = date.toISOString().slice(0, 10);
+</script>
+</html>

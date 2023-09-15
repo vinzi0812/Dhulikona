@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css/otpfilling.css'%}">
+</head>
+<body>
+    
+          <div class="container">
+            <header>
+              <i class="bx bxs-check-shield"></i>
+            </header>
+            <h4>Enter OTP Code</h4>
+            <form action="#">
+              <div class="input-field">
+                <input type="number" name="otp" id="otp" />
+              </div>
+              <button>Verify OTP</button>
+            </form>
+            <a href="">ResendOtp</a>
+          </div>
+</body>
+</html>

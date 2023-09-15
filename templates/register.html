@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="{% static '/css/registration.css'%}">
+</head>
+<body>
+   <div>
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>Responsive Registration Form</title>
+  <style>
+    /* CSS code for the registration form */
+     
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Registration Form</h2>
+    <form method="POST" action="">
+      {% csrf_token %} 
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="inp" id="name" name="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="Mobile number">Mobile Number</label>
+        <input type="tel" id="Mobile_number" name="phone" class="inp" required>
+      </div>
+       <div class="form-group">
+        <label for="Address">Address</label>
+          <div class="form-group">
+            <label for="street">Street:</label>
+            <input type="text" id="street" name="street" class="inp" required>
+          </div>
+          <div class="form-group">
+            <label for="village">Village:</label>
+            <input type="text" id="village" name="village" class="inp" required>
+          </div>
+          <div class="form-group">
+            <label for="district">District:</label>
+            <input type="text" id="district" name="district" class="inp" required>
+          </div>
+      <div class="form-group">
+        <button type="submit">Register</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+
+       
